@@ -82,9 +82,9 @@ extern "C" void krnl_vadd(uint32_t* in1,
                           int size) {
 
     // Interface pragmas (keep these in the .cpp file)
-    #pragma HLS INTERFACE m_axi port = in1 bundle = gmem0
-    #pragma HLS INTERFACE m_axi port = in2 bundle = gmem1
-    #pragma HLS INTERFACE m_axi port = out bundle = gmem0
+    #pragma HLS INTERFACE m_axi port = in1 bundle = gmem0 depth=DATA_SIZE
+    #pragma HLS INTERFACE m_axi port = in2 bundle = gmem1 depth=DATA_SIZE
+    #pragma HLS INTERFACE m_axi port = out bundle = gmem0 depth=DATA_SIZE
     #pragma HLS INTERFACE s_axilite port = size bundle = control
     #pragma HLS INTERFACE s_axilite port = in1 bundle = control
     #pragma HLS INTERFACE s_axilite port = in2 bundle = control
